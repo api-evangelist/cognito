@@ -1,0 +1,39 @@
+generated: '2026-07-18'
+method: searched
+source: https://cognitohq.com/docs/guides/authenticating
+docs: https://cognitohq.com/docs/guides/authenticating
+description: >-
+  Cognito authenticates every API request with HTTP request signatures (the
+  Cavage "Signing HTTP Messages" draft), not a bearer token or HTTP Basic. Each
+  request carries a Date header, a Digest header (base64 SHA-256 of the body),
+  and an Authorization: Signature header whose signature is an HMAC-SHA256 over
+  the "(request-target) date digest" signing string, keyed with the API secret.
+  The API key (keyId) identifies the organization; the API secret is used only
+  server-side to compute the signature and is never transmitted.
+summary:
+  types: [httpSignature]
+  api_key_in: [header]
+  oauth2_flows: []
+schemes:
+- name: HTTPSignature
+  type: http
+  scheme: signature
+  algorithm: hmac-sha256
+  key_id: API key (keyId)
+  secret: API secret (HMAC key, never transmitted)
+  signed_headers:
+  - (request-target)
+  - date
+  - digest
+  headers:
+    Date: W3C/RFC 1123 timestamp, e.g. "Thu, 25 Aug 2016 22:37:14 GMT"
+    Digest: "SHA-256=<base64(sha256(body))>"
+    Authorization: >-
+      Signature keyId="<api-key>",algorithm="hmac-sha256",headers="(request-target)
+      date digest",signature="<base64 hmac-sha256 signature>"
+  clock_skew: Date must be within 15 minutes of server time (per webhook verification docs)
+  sources: [docs]
+notes: >-
+  Community and beta SDKs implement the signing so integrators do not compute the
+  HMAC by hand. No OpenAPI spec was located to derive from; profile captured from
+  the published authentication guide.
