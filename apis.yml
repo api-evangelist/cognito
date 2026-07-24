@@ -1,9 +1,33 @@
 aid: cognito
 name: Cognito
-description: Cognito is a company surfaced as a portfolio company of battery-ventures, y-combinator and
-  added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  Cognito (cognitohq.com, operated by BlockScore, Inc.) is an identity
+  verification, KYC, and AML compliance API provider that was backed by Y
+  Combinator and Battery Ventures and acquired by Plaid in 2020. Its API turns a
+  phone number, name, or ID document into a verified identity in under a minute,
+  covering 209 countries and thousands of document types. Three developer
+  products sit on one REST API: Identity (phone-first, frictionless
+  verification), Flow (an all-in-one hosted / embeddable verification experience
+  integrated in minutes with document and selfie checks), and Screening
+  (watchlist, sanctions, and politically-exposed-person AML screening with daily
+  re-scans across 20+ lists). The API is JSON:API (application/vnd.api+json),
+  date-versioned via a Cognito-Version header, and authenticated with HTTP
+  request signatures (HMAC-SHA256 over a digest of the body). It ships a sandbox
+  host, signed webhooks, and client SDKs for seven languages.
 url: https://raw.githubusercontent.com/api-evangelist/cognito/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://cognitohq.com/wp-content/themes/cognito/images/cognito-share.jpg
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -11,14 +35,107 @@ x-backed-by:
 - y-combinator
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-acquired-by: plaid
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
-apis: []
+- Identity
+- Identity Verification
+- KYC
+- AML
+- Compliance
+- Fraud Prevention
+- Onboarding
+- Watchlist Screening
+- Know Your Customer
+apis:
+- name: Cognito Identity Verification API
+  description: >-
+    REST API for identity verification, KYC, and AML watchlist/PEP screening.
+    JSON:API media type (application/vnd.api+json), date-based versioning via the
+    Cognito-Version header, and HTTP request-signature authentication
+    (HMAC-SHA256). Core resources: profiles, identity_searches (and async search
+    jobs), plus Flow sessions and Screening searches.
+  humanURL: https://cognitohq.com/docs
+  baseURL: https://api.cognitohq.com
+  tags:
+  - Identity Verification
+  - KYC
+  - AML
+  properties:
+  - type: APIReference
+    url: https://cognitohq.com/docs/reference
+  - type: GettingStarted
+    url: https://cognitohq.com/docs/identity/id-verification-api-quickstart
+  - type: Authentication
+    url: authentication/cognito-authentication.yml
+  - type: Webhooks
+    url: asyncapi/cognito-flow-webhooks.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+common:
+- type: DeveloperPortal
+  url: https://cognitohq.com/docs
+- type: Documentation
+  url: https://cognitohq.com/docs
+- type: APIReference
+  url: https://cognitohq.com/docs/reference
+- type: GettingStarted
+  url: https://cognitohq.com/docs/identity/id-verification-api-quickstart
+- type: Blog
+  url: https://cognitohq.com/blog
+- type: Pricing
+  url: https://plaid.com/pricing/
+- type: SignUp
+  url: https://dashboard.plaid.com/signup/
+- type: PrivacyPolicy
+  url: https://cognitohq.com/privacy-statement
+- type: StatusPage
+  url: https://status.cognitohq.com/
+- type: ChangeLog
+  url: https://cognitohq.com/docs/guides/api-changelog
+- type: Deprecation
+  url: https://cognitohq.com/docs/guides/breaking-changes
+- type: Webhooks
+  url: asyncapi/cognito-flow-webhooks.yml
+- type: Authentication
+  url: authentication/cognito-authentication.yml
+- type: Conventions
+  url: conventions/cognito-conventions.yml
+- type: Conformance
+  url: conformance/cognito-conformance.yml
+- type: Lifecycle
+  url: lifecycle/cognito-lifecycle.yml
+- type: ChangeLog
+  name: Cognito changelog (artifact)
+  url: changelog/cognito-changelog.yml
+- type: Packages
+  url: packages/cognito-packages.yml
+- type: Sandbox
+  url: sandbox/cognito-sandbox.yml
+- type: ErrorCatalog
+  url: errors/cognito-problem-types.yml
+- type: VulnerabilityDisclosure
+  url: security/cognito-vulnerability-disclosure.yml
+- type: Security
+  url: https://cognitohq.com/docs/guides/security
+- type: DomainSecurity
+  url: security/cognito-domain-security.yml
+- type: MCPServer
+  url: mcp/cognito-mcp.yml
+- type: LLMsTxt
+  url: llms/cognito-llms.txt
+- type: Components
+  url: components/cognito-components.yml
+- type: DataModel
+  url: data-model/cognito-data-model.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

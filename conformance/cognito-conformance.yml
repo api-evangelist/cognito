@@ -1,0 +1,35 @@
+generated: '2026-07-18'
+method: searched
+source: >-
+  https://cognitohq.com/docs — media type, authentication, and versioning
+  observed in the published API documentation.
+description: >-
+  Cross-cutting standards the Cognito Identity Verification API conforms to,
+  observed from its published docs (JSON:API media type, HTTP request-signature
+  auth). No formal compliance certifications (SOC 2 / ISO 27001 / PCI) were
+  published on the security page, so no Compliance pointer is asserted.
+standards:
+- id: jsonapi
+  conforms: true
+  evidence: >-
+    Requests and responses use the application/vnd.api+json media type with
+    data.type / data.id / attributes / relationships resource objects.
+- id: http-message-signatures
+  conforms: true
+  evidence: >-
+    Authorization uses the Cavage "Signing HTTP Messages" draft with keyId,
+    algorithm=hmac-sha256, and a (request-target) date digest signing string.
+- id: rfc3230-digest
+  conforms: true
+  evidence: Digest header carries SHA-256=<base64(sha256(body))> per RFC 3230.
+- id: oauth2
+  conforms: false
+  evidence: No OAuth2 security scheme; auth is HTTP request signatures.
+- id: oidc
+  conforms: false
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors use JSON:API errors[], not application/problem+json.
+- id: soc2
+  conforms: unknown
+  evidence: Not published on the security page reviewed.

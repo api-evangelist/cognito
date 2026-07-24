@@ -1,0 +1,29 @@
+generated: '2026-07-18'
+method: searched
+source: https://cognitohq.com/docs/guides/api-changelog
+description: >-
+  Versioning, deprecation, and operational-transparency posture for the Cognito
+  Identity Verification API.
+versioning:
+  scheme: date-based, pinned per request via the Cognito-Version header
+  current:
+  - {product: Identity, version: '2016-09-01'}
+  - {product: Screening, version: '2020-08-14'}
+  - {product: Flow, version: '2020-08-14'}
+  policy: Version dates increment only on breaking changes.
+  docs: https://cognitohq.com/docs/guides/api-changelog
+deprecation:
+  policy_url: https://cognitohq.com/docs/guides/breaking-changes
+  breaking_changes_documented: true
+  sunset_header: unknown
+status_page: https://status.cognitohq.com/
+changelog:
+  api: https://cognitohq.com/docs/guides/api-changelog
+  product: https://cognitohq.com/changelog
+sla:
+  url: null
+  uptime_target: null
+deprecated_operations: []
+notes: >-
+  Product is operated under Plaid post-acquisition; the cognitohq.com developer
+  surface (docs, status, changelog) remained live at capture time.

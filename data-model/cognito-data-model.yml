@@ -1,0 +1,39 @@
+generated: '2026-07-18'
+method: derived
+source: >-
+  https://cognitohq.com/docs/identity/id-verification-api-quickstart and
+  /docs/reference — entities and relationships derived from the documented
+  JSON:API resources (no OpenAPI available to parse $refs).
+description: >-
+  Entity-relationship sketch derived from Cognito's documented JSON:API
+  resources. Relationships reflect the request/response shapes shown in the
+  quickstart (an identity_search belongs to a profile; async searches produce
+  jobs).
+entities:
+- name: profile
+  id_prefix: prf_
+  description: An identity profile that searches and verifications attach to.
+- name: identity_search
+  description: A phone/identity search executed against a profile.
+- name: job
+  description: Async processing handle for a long-running identity search.
+- name: flow_session
+  description: A Flow hosted-verification session (document/selfie/data collection).
+- name: screening_search
+  description: An AML watchlist / PEP screening search.
+relationships:
+- from: identity_search
+  to: profile
+  kind: belongs_to
+  via: profile
+- from: profile
+  to: identity_search
+  kind: has_many
+  via: identity_searches
+- from: identity_search
+  to: job
+  kind: has_one
+  via: job
+  notes: When processed asynchronously (Prefer respond-async).
+notes: >-
+  Sketch only; id-prefixes beyond prf_ were not published on the pages reviewed.

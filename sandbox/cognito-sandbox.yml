@@ -1,0 +1,42 @@
+generated: '2026-07-18'
+method: searched
+source:
+- https://cognitohq.com/docs/identity/testing
+- https://cognitohq.com/docs/flow/testing-your-flow
+description: >-
+  Cognito's sandbox / test-data surface. A dedicated sandbox host returns
+  deterministic fictional records so integrators can exercise identity searches
+  without live data. All values below are published verbatim in the testing
+  docs; none are invented.
+docs:
+- https://cognitohq.com/docs/identity/testing
+- https://cognitohq.com/docs/flow/testing-your-flow
+modes:
+- name: sandbox
+  base_url: https://sandbox.cognitohq.com
+  notes: >-
+    Returns the same two fictional records for any valid request to
+    /identity_searches.
+- name: live
+  base_url: https://api.cognitohq.com
+  notes: Separate live API keys; real verification.
+environment_field: >-
+  Webhook payloads carry environment = "sandbox" or "live".
+magic_values:
+- kind: last_name
+  value: Gergich
+  effect: >-
+    Any search whose profile last name is "Gergich" (any case, any first name)
+    forces zero identity records to be returned.
+- kind: phone_number
+  value: '+16508007985'
+  effect: Example test phone number used in the sandbox quickstart request.
+headers:
+- name: Prefer
+  value: respond-async
+  effect: Forces an asynchronous response so async polling can be tested.
+tooling:
+- name: Sandbox integration helper
+  notes: >-
+    Flow ships a sandbox integration helper (per product changelog) plus a
+    manually cancelable Flow session for testing terminal states.

@@ -1,0 +1,71 @@
+generated: '2026-07-18'
+method: searched
+source: >-
+  https://cognitohq.com/docs — cross-cutting request/response conventions that
+  apply across the Cognito Identity, Flow, and Screening APIs.
+description: >-
+  How the Cognito REST API behaves across every operation: JSON:API request and
+  response envelopes, date-based versioning via a request header, HTTP
+  request-signature authentication, and synchronous vs. asynchronous processing.
+  These are the developer-experience / runtime-semantics conventions not fully
+  expressed by an endpoint list.
+
+base_url: https://api.cognitohq.com
+sandbox_url: https://sandbox.cognitohq.com
+api_style: REST over HTTPS, JSON:API media type (application/vnd.api+json)
+
+media_type:
+  request: application/vnd.api+json
+  response: application/vnd.api+json
+  spec: JSON:API — resources use data.type / data.id / attributes / relationships
+
+authentication:
+  scheme: HTTP request signatures (HMAC-SHA256 over (request-target) date digest)
+  detail: authentication/cognito-authentication.yml
+  docs: https://cognitohq.com/docs/guides/authenticating
+
+versioning:
+  scheme: date-based, pinned per request
+  mechanism: Cognito-Version request header (e.g. Cognito-Version 2016-09-01)
+  current:
+  - {product: Identity, version: '2016-09-01'}
+  - {product: Screening, version: '2020-08-14'}
+  - {product: Flow, version: '2020-08-14'}
+  policy: >-
+    Version dates only increment on a breaking change, not on every update.
+  docs: https://cognitohq.com/docs/guides/api-changelog
+  breaking_changes: https://cognitohq.com/docs/guides/breaking-changes
+
+async_processing:
+  supported: true
+  mechanism: Prefer request header
+  values:
+    respond-async: Force asynchronous processing; returns a job to poll.
+  sync_window: Synchronous responses returned within ~5 seconds; longer work runs async.
+  poll: GET /identity_searches/jobs/{job_id}
+  docs: https://cognitohq.com/docs/identity/id-verification-api-quickstart
+
+idempotency:
+  supported: false
+  notes: >-
+    No documented idempotency-key header was found. Searches are keyed to a
+    profile relationship; re-issuing a search creates a new search resource.
+
+pagination:
+  style: unknown
+  notes: JSON:API pagination not documented on the pages reviewed; not asserted.
+
+error_envelope:
+  format: json:api-errors
+  shape: >-
+    Errors are returned as a top-level errors[] array per JSON:API, each with
+    status, title, detail, and code members.
+  detail: errors/cognito-problem-types.yml
+
+webhooks:
+  supported: true
+  signing: HMAC-SHA256 request signatures (same scheme as the API)
+  detail: asyncapi/cognito-flow-webhooks.yml
+
+rate_limit_signaling:
+  documented: false

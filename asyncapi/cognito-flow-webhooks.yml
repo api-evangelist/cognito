@@ -1,0 +1,46 @@
+generated: '2026-07-18'
+method: searched
+source: https://cognitohq.com/docs/flow/webhooks
+spec_type: Webhooks
+description: >-
+  Cognito's webhook event surface (no published AsyncAPI document was located, so
+  the webhook catalog is captured directly). Webhooks are configured per Flow
+  integration in the dashboard with a receiver URL and a subscribed event set;
+  each delivery is signed with the same HTTP request-signature scheme as the API.
+delivery:
+  transport: HTTPS POST to a configured receiver URL
+  signing: >-
+    HMAC-SHA256 request signature; the request carries Authorization (Signature),
+    Digest (SHA-256 of body), and Date headers — verify the body digest and that
+    Date is within 15 minutes of server time.
+  expected_response: HTTP 200
+  retries: >-
+    Non-200 responses retry up to 7 times with exponential backoff, final attempt
+    ~4 days later; a warning email after 3 consecutive days of failure; webhooks
+    disable after 4 days of continued failure.
+  ordering: Delivery order is not guaranteed; fetch full session state via the API.
+  beta_note: Flow is in beta; payloads include a _meta tag as the format may change before v1.0.
+envelope:
+  id: Unique webhook event identifier
+  timestamp: ISO 8601 delivery time
+  event: Event type name
+  data: Session details (session id, status, current step, customer reference)
+  environment: sandbox | live
+events:
+- name: flow_session.step.updated
+  product: Flow
+  description: A user progresses through a Flow step.
+- name: flow_session.status.updated
+  product: Flow
+  description: >-
+    A session reaches a terminal state (success, failed, expired, canceled, or
+    pending_review).
+- name: flow_session.retried
+  product: Flow
+  description: A retry was initiated via the dashboard or API.
+- name: screening.status.updated
+  product: Screening
+  description: A screening search status changed.
+- name: entity_screening.status.updated
+  product: Screening
+  description: An entity screening status changed.

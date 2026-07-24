@@ -1,0 +1,29 @@
+generated: '2026-07-18'
+method: searched
+source:
+- https://cognitohq.com/products/flow
+- https://cognitohq.com/docs/flow/trying-your-flow
+- https://cognitohq.com/docs/flow/mobile-integration
+description: >-
+  Cognito Flow is an embeddable / hosted identity-verification experience
+  (distinct from the server-side SDKs). It renders the end-user document + selfie
+  + data-collection flow client-side and reports progress back via frontend
+  events and signed webhooks. Integrated in minutes with web and mobile options.
+components:
+- family: Flow
+  kind: hosted / embeddable verification experience
+  surfaces:
+  - name: Flow (hosted)
+    description: All-in-one hosted verification session launched via a generated link or embed.
+  - name: Flow Hybrid
+    description: Hybrid input-validation integration blending your form with Cognito verification.
+  - name: Mobile integration
+    description: Native mobile embedding of the Flow verification experience.
+  client_events:
+    doc: https://cognitohq.com/docs/flow/frontend-events
+    description: Frontend events emitted as the user progresses through Flow steps.
+  server_signals:
+    webhooks: asyncapi/cognito-flow-webhooks.yml
+  docs:
+    guide: https://cognitohq.com/docs/flow/trying-your-flow
+    securing: https://cognitohq.com/docs/flow/securing-your-flow-integration

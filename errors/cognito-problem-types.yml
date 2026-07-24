@@ -1,0 +1,45 @@
+generated: '2026-07-18'
+method: searched
+source: https://cognitohq.com/docs/reference
+format: jsonapi-errors
+description: >-
+  Cognito returns errors using the JSON:API error format (application/vnd.api+json):
+  a top-level errors[] array, each member describing a single problem. No
+  OpenAPI spec was available to derive a per-operation 4xx/5xx catalog, so this
+  captures the documented error envelope and standard HTTP status semantics for
+  the identity/search operations.
+envelope:
+  media_type: application/vnd.api+json
+  shape: >-
+    { "errors": [ { "status": "<http status>", "code": "<machine code>",
+    "title": "<summary>", "detail": "<human-readable explanation>" } ] }
+  members:
+  - status: HTTP status code, as a string
+  - code: Application-specific error code
+  - title: Short, human-readable summary
+  - detail: Human-readable explanation specific to this occurrence
+statuses:
+- status: 400
+  title: Bad Request
+  detail: Malformed request body or invalid JSON:API document.
+- status: 401
+  title: Unauthorized
+  detail: Missing or invalid HTTP request signature (Date/Digest/Authorization).
+- status: 403
+  title: Forbidden
+  detail: API key not permitted for the requested resource or environment.
+- status: 404
+  title: Not Found
+  detail: Referenced profile, search, or job does not exist.
+- status: 422
+  title: Unprocessable Entity
+  detail: Validation failed on the submitted attributes (JSON:API semantics).
+- status: 429
+  title: Too Many Requests
+  detail: Rate limit exceeded.
+- status: 500
+  title: Internal Server Error
+  detail: Unexpected server error.
+notes: >-
+  Statuses reflect JSON:API + standard HTTP semantics for the documented
+  operations; enrich with a docs error reference if one is published.

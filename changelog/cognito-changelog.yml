@@ -1,0 +1,49 @@
+generated: '2026-07-18'
+method: searched
+source: https://cognitohq.com/docs/guides/api-changelog
+description: >-
+  Cognito API changelog. Two dated API-version lines exist; version dates change
+  only on a breaking change. A separate product/dashboard changelog runs weekly
+  at https://cognitohq.com/changelog.
+scheme: date-based (Cognito-Version header)
+current_versions:
+- {product: Identity, version: '2016-09-01'}
+- {product: Screening, version: '2020-08-14'}
+- {product: Flow, version: '2020-08-14'}
+docs:
+  api_changelog: https://cognitohq.com/docs/guides/api-changelog
+  product_changelog: https://cognitohq.com/changelog
+  breaking_changes: https://cognitohq.com/docs/guides/breaking-changes
+entries:
+- date: '2020-08-14'
+  version: '2020-08-14'
+  type: addition
+  highlights: Screening dashboard and API released; new API version line for Screening and Flow.
+- date: '2019-09-18'
+  type: change
+  highlights: Dashboard branding redesign.
+- date: '2018-07-10'
+  type: addition
+  highlights: API keys download page added.
+- date: '2017-11-10'
+  type: addition
+  highlights: Password reset system added.
+- date: '2017-10-25'
+  type: addition
+  highlights: Address timeline visualization added.
+- date: '2017-10-24'
+  type: improvement
+  highlights: Name deduplication improved.
+- date: '2016-09-01'
+  version: '2016-09-01'
+  type: breaking
+  highlights: >-
+    Initial Identity release with the new request-signature authentication;
+    identity assessment scores changed to be nullable (breaking).
+recent_product_updates:
+- Create hosted verifications via API and more Flow step context
+- Document-verification-only territories enabled, webhooks and more
+- Expanded Lightning coverage, optional ID collection, SMS device handoffs
+- Introducing Flow Hybrid
+- Sandbox integration helper and manually cancelable Flow session
+notes: Product-changelog highlights sampled from cognitohq.com/changelog slugs (2021-2022 weekly line).

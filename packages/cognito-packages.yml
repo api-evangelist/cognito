@@ -1,0 +1,29 @@
+generated: '2026-07-18'
+method: searched
+source: https://cognitohq.com/docs/guides/client-sdks
+description: >-
+  Cognito client libraries. Official SDKs for .NET/ASP, Java, Node.js/JavaScript,
+  PHP, Python, and Go are published as beta libraries available on request from
+  Cognito support (not on public package registries at capture time). One
+  community Ruby library is published on GitHub. Because no official first-party
+  SDK is publicly downloadable from a registry, no canonical SDKs pointer is
+  emitted (would over-count the ergonomics sdk_count check).
+official_sdks_status: >-
+  Beta, distributed by Cognito support on request; no public npm / PyPI / Maven /
+  NuGet / RubyGems packages located.
+official_sdk_languages:
+- dotnet
+- java
+- javascript
+- php
+- python
+- go
+packages:
+- language: ruby
+  registry: github
+  name: cognito
+  url: https://github.com/opendoor-labs/cognito
+  install: "gem 'cognito', git: 'https://github.com/opendoor-labs/cognito'"
+  official: false
+  maintainer: Connor Jacobsen (community)
+  notes: Community Ruby client for the Cognito API.

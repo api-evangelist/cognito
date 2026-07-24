@@ -1,0 +1,40 @@
+# Cognito
+
+> Cognito (cognitohq.com, operated by BlockScore, Inc.; acquired by Plaid) is an identity verification, KYC, and AML compliance API. It turns a phone number, name, or ID document into a verified identity in under a minute across 209 countries. Three products share one REST API: Identity (phone-first verification), Flow (hosted/embeddable all-in-one verification with document + selfie checks), and Screening (watchlist / sanctions / PEP AML screening). The API is JSON:API (application/vnd.api+json), date-versioned via a Cognito-Version header, and authenticated with HTTP request signatures (HMAC-SHA256).
+
+## APIs
+- [Cognito Identity Verification API](https://cognitohq.com/docs): REST, JSON:API, base https://api.cognitohq.com (sandbox https://sandbox.cognitohq.com)
+
+## Docs
+- [Developer docs](https://cognitohq.com/docs)
+- [API reference](https://cognitohq.com/docs/reference)
+- [ID Verification API quickstart](https://cognitohq.com/docs/identity/id-verification-api-quickstart)
+- [Authentication (HTTP request signatures)](https://cognitohq.com/docs/guides/authenticating)
+- [Client SDKs](https://cognitohq.com/docs/guides/client-sdks)
+- [Webhooks](https://cognitohq.com/docs/flow/webhooks)
+- [Testing / sandbox](https://cognitohq.com/docs/identity/testing)
+- [Security](https://cognitohq.com/docs/guides/security)
+- [API changelog](https://cognitohq.com/docs/guides/api-changelog)
+- [Breaking changes](https://cognitohq.com/docs/guides/breaking-changes)
+- [Screening integration guide](https://cognitohq.com/docs/screening/integration-guide)
+
+## Artifacts
+- [Authentication profile](authentication/cognito-authentication.yml)
+- [API conventions](conventions/cognito-conventions.yml)
+- [Conformance](conformance/cognito-conformance.yml)
+- [Lifecycle](lifecycle/cognito-lifecycle.yml)
+- [Changelog](changelog/cognito-changelog.yml)
+- [Packages / SDKs](packages/cognito-packages.yml)
+- [Sandbox / test data](sandbox/cognito-sandbox.yml)
+- [Webhook catalog](asyncapi/cognito-flow-webhooks.yml)
+- [Error catalog](errors/cognito-problem-types.yml)
+- [Embedded components (Flow)](components/cognito-components.yml)
+- [Data model](data-model/cognito-data-model.yml)
+- [MCP (candidate)](mcp/cognito-mcp.yml)
+
+## Company
+- [Blog](https://cognitohq.com/blog)
+- [Pricing](https://plaid.com/pricing/)
+- [Sign up](https://dashboard.plaid.com/signup/)
+- [Status](https://status.cognitohq.com/)
+- [Privacy](https://cognitohq.com/privacy-statement)
