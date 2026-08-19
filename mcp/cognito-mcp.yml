@@ -1,13 +1,10 @@
 generated: '2026-07-18'
 method: derived
 status: candidate
-source: >-
-  https://cognitohq.com/docs/reference — candidate tools derived from the
-  documented Identity operations. No official Cognito MCP server was located.
-description: >-
-  Candidate MCP tool surface for the Cognito Identity Verification API, derived
-  from documented operations. This is a governance starting point, not a
-  published server.
+source: https://cognitohq.com/docs/reference — candidate tools derived from the documented Identity operations.
+  No official Cognito MCP server was located.
+description: Candidate MCP tool surface for the Cognito Identity Verification API, derived from documented
+  operations. This is a governance starting point, not a published server.
 server:
   name: cognito
   transport: http
@@ -22,7 +19,11 @@ tools:
 - name: get_identity_search_job
   description: Poll the status/result of an asynchronous identity search job.
   http: GET /identity_searches/jobs/{job_id}
-notes: >-
-  Screening and Flow operations can be added when their reference operations are
-  captured. Marked candidate; requires the real API base https://api.cognitohq.com
-  and HTTP request-signature auth.
+notes: Screening and Flow operations can be added when their reference operations are captured. Marked
+  candidate; requires the real API base https://api.cognitohq.com and HTTP request-signature auth.
+deployment:
+  mode: none
+  verified: derived
+  tools: 3
+  checked: '2026-08-12'
+  source: catalog MCP census
