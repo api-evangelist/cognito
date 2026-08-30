@@ -90,6 +90,11 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: ParentCompany
+  url: https://apis.io/providers/plaid/
+  name: Plaid
+  x-relationship: acquired
+  x-evidence: ") is an identity verification, KYC, and AML compliance API provider that was backed by Y Combinator and Battery Ventures and acquired by Plaid in 2020."
 - type: DeveloperPortal
   url: https://cognitohq.com/docs
 - type: Documentation
