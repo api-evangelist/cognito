@@ -62,6 +62,16 @@ tags:
 - Fraud Prevention
 - Onboarding
 - Watchlist Screening
+tags_raw:
+- Company
+- Identity
+- Identity Verification
+- KYC
+- AML
+- Compliance
+- Fraud Prevention
+- Onboarding
+- Watchlist Screening
 - Know Your Customer
 apis:
 - name: Cognito Identity Verification API
