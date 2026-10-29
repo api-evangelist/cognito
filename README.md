@@ -64,6 +64,109 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Cognito is a company surfaced as a portfolio company of battery-ventures, y-combinator and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Cognito (cognitohq.com, operated by BlockScore, Inc.) is an identity verification, KYC, and AML compliance API provider that was backed by Y Combinator and Battery Ventures and acquired by Plaid in 2020. Its API turns a phone number, name, or ID document into a verified identity in under a minute, covering 209 countries and thousands of document types. Three developer products sit on one REST API: Identity (phone-first, frictionless verification), Flow (an all-in-one hosted / embeddable verification experience integrated in minutes with document and selfie checks), and Screening (watchlist, sanctions, and politically-exposed-person AML screening with daily re-scans across 20+ lists). The API is JSON:API (application/vnd.api+json), date-versioned via a Cognito-Version header, and authenticated with HTTP request signatures (HMAC-SHA256 over a digest of the body). It ships a sandbox host, signed webhooks, and client SDKs for seven languages.
 
-Backed by: battery-ventures, y-combinator
+**Areas:** Company · Identity · Identity Verification · KYC · AML · Compliance · Fraud Prevention · Onboarding · Watchlist Screening
+
+## Cognito on APIs.io
+
+Everything profiled for Cognito is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/cognito/](https://apis.io/providers/cognito/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Cognito Identity Verification API](https://apis.io/apis/cognito/cognito-identity-verification-api/) — REST API for identity verification, KYC, and AML watchlist/PEP screening. JSON:API media type (application/vnd.api+json), date-based versioning via the…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Cognito Flow Webhooks](https://apis.io/asyncapis/cognito/cognito-flow-webhooks/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [cognito](https://apis.io/servers/cognito/cognito/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Cognito Authentication](https://apis.io/security/cognito/cognito-authentication/)
+- [Cognito Domain Security](https://apis.io/security/cognito/cognito-domain-security/)
+- [Cognito Vulnerability Disclosure](https://apis.io/security/cognito/cognito-vulnerability-disclosure/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.cognitohq.com/)
+- [Documentation](https://cognitohq.com/docs)
+- [Getting started](https://cognitohq.com/docs/identity/id-verification-api-quickstart)
+- [API reference](https://cognitohq.com/docs/reference)
+- [Pricing](https://plaid.com/pricing/)
+- [Sign up](https://dashboard.plaid.com/signup/)
+- [Changelog](https://cognitohq.com/docs/guides/api-changelog)
+- [Blog](https://cognitohq.com/blog)
+- [Security](https://cognitohq.com/docs/guides/security)
+- [Privacy policy](https://cognitohq.com/privacy-statement)
+- [Status](https://status.cognitohq.com/)
+
+## API Evangelist rating
+
+**Kin Score 44.6** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 39.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 57.9 |
+| Developer ergonomics | 59.5 |
+| Access clarity | 21.1 |
+
+**Agent readiness 22.7** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | yes |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 26.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/cognito/](https://apis.io/providers/cognito/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Cognito: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/cognito/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
